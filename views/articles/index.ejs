@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+    
+    <title>cn_blog</title>
+
+</head>
+<body style="background-color: rgb(246, 246, 246);">
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@378;500;600;700&family=Ubuntu:wght@378;500;700&display=swap');</style>
+
+    <!-- header and social media links -->
+    <%- include('_header_file.ejs') %>
+    <div class="container" style="height: 220px;
+    background:rgba(0, 0, 0, 0.787);
+    margin-top: -220px;">
+
+        <span style="
+        margin: auto 0;
+        padding: 40px 0;
+        color: #fff;">
+            <h2 style="font-family: 'Ubuntu', sans-serif;">
+                For Tech and Cyber Related Solutions.
+            </h2>
+            <h5 style="font-weight: lighter;">
+                we always update you with the latest tech in<br> town and new tech tricks in town to<br> keep you one step
+                ahead
+            </h5>
+        </span>
+        <a href="/articles/new" class="btn btn-success">Add Article</a>
+
+
+    </div>
+
+
+    <div class="container" style="margin-top: 20px;">
+        <div class="row">
+
+            <div class="col-md-8">
+                        <h3 class="mb-4" style="text-align: center; font-family: 'Ubuntu', sans-serif;">Articles</h3>
+                        
+                <div class="row">
+                    <div class="col-md-1">
+                        <h6>tags:   </h6>
+                    </div>
+
+                    <div class="col-md-11" style="margin-right: 0;">
+                        <% articles.forEach(article => { %>
+                            <button class="btn btn-outline-dark btn-sm"><%= article.hashtag %></button>
+                     
+                        <% }) %>
+                    </div>
+                </div>
+
+                        <% articles.forEach(article => { %>
+                            <div class="card mt-4" style=" box-shadow: -8px -10px 5px rgba(0, 0, 0, 0.205)">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="border-bottom: 1px solid #000;"><%= article.title %></h4>
+                                    <div class="card-subtitle text-muted mb-2">
+                                        posted: <%= article.createdDate.toLocaleDateString() %>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <div class="text-card mb-2"><%= article.description %></div>
+                                            </div>
+                                            <div class="col-md-6 mb-2" style="overflow: hidden;">                                               
+                                                <img src="/img/uploads/<%= article.img %> " class="img-fluid" alt="Responsive image">
+                                                <p class="text-muted mb-2" style="margin-bottom: 1px solid rgb(59, 59, 59);">Photo Credit:<%= article.img_source %></p>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-2">Article by:<%= article.author %> </p>
+
+
+                                    <a href="articles/<%= article.slug %> " class="btn btn-primary">read more</a>
+                                    <a href="articles/edit/<%= article.id %> " class="btn btn-info">edit</a>
+                                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                                        <button type="submit" class="btn btn-danger">delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% }) %>
+            </div>
+
+        <div class="col-md-4" style="border-radius: 10px; background: #fff; margin-top: 110px; height: fit-content; box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.205)">
+            <h2 class="mt-4" style="font-family: 'Ubuntu', sans-serif;">Recent</h2>
+                <!-- <a href="/articles/new" class="btn btn-success">Add Article</a> -->
+            <h5 style="color: crimson; font-weight: lighter;" class="mb-3">Get to know what is happening in the world of tech.</h5>
+                <% articles.forEach(article => { %>
+                    <div class="card mt-1" style="border-top: 2px solid #000; border-bottom: none; border-right: none; border-left: none; border-radius: 0;">
+                        <div class="card-body">
+                            <h6 class="card-title"><%= article.title %></h6>
+                            <div class="card-subtitle text-muted mb-2">
+                                posted: <%= article.createdDate.toLocaleDateString() %>
+                            </div>
+                            <!-- <div class="text-card mb-2"><%= article.description %></div> -->
+                            <a href="articles/<%= article.slug %>" class="btn btn-sm btn-primary" style="background: #000; border: none;">read more</a>
+                            <!-- <a href="articles/edit/<%= article.id %> " class="btn btn-info">edit</a> -->
+                            <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger">delete</button>
+                            </form> -->
+                        </div>
+                    </div>
+                <% }) %>
+        </div>
+    </div> 
+       
+</div>
+    
+</body>
+</html>

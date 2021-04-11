@@ -1,0 +1,79 @@
+<div class="container" style="border: 1px solid #000;
+border-radius: 5px;
+padding-top: 35px;
+background: #fff;
+width: 100%">
+
+    <!-- post title -->
+    <div class="form-group mb-4">
+        <label for="title">Title<span style="color: #ff0000;">*</span></label>
+        <input required value="<%= article.title %>" type="text" name="title" id="title" class="form-control">
+        
+    </div>
+    
+    <!-- description -->
+    <div class="form-group mb-4">
+        <label for="description" class="">Description</label>
+        <textarea name="description" id="description" class="form-control"><%= article.description %></textarea>
+    
+    </div>
+    <!-- topic and hashtag -->
+    <div class="form-group mb-4">
+    
+        <div class="row">
+            <div class="col-md-6">
+                <label for="topic" class="">Topic<span style="color: #ff0000;">*</span></label>
+                <input required value="<%= article.topic %>" type="text" name="topic" id="topic" class="form-control">
+    
+            </div>
+
+            <div class="col-md-6">
+                <label for="hashtag" class="">Hashtag</label>
+                <input value="<%= article.hashtag %>" type="text" name="hashtag" id="hashtag" class="form-control">
+    
+            </div>
+        </div>
+        
+    
+    </div>
+    <!-- Body -->
+    <div class="form-group mb-4">
+        <label for="markdown">Body<span style="color: #ff0000;">*</span> (you can make subtitles by adding # at the begining of a sentence. Eg "#Hello")</label>
+        <textarea name="markdown" rows="7" required  id="markdown" class="form-control"><%= article.markdown %></textarea>
+        
+    </div>
+    <!-- author -->
+    <div class="form-group mb-4">
+        <label for="author">Author</label>
+        <input value="<%= article.author %>" type="text" name="author" id="author" class="form-control">
+    
+    </div>
+    <!-- upload image -->
+    <div class="form-group mb-4">
+        <div class="row">
+            <div class="col-md-6  mt-2">
+                <label for="image">Upload image</label><br>
+            <input type="file" name="image" id="image" class="form-control-file"><%= article.img %>
+            <% if(article.img) { %>
+                
+                <img src="/img/uploads/<%= article.img %> " class="img-fluid" alt="no image yet">
+            <% }  %> 
+            </div>
+
+                <!-- image source -->
+            <div class="col-md-6">
+                <label for="img_source">Image Source<span style="color: #ff0000;">*</span></label>
+                <input value="<%= article.img_source %>" type="text" name="img_source" id="img_source" class="form-control">
+
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <!-- buttons -->
+    <div class="form-group mb-4">
+        <a href="/" class="btn btn-secondary mt-4"> cancel</a>
+        <button type="submit" class='btn btn-primary mt-4'>save</button>
+    </div>
+</div>
