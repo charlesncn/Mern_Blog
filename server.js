@@ -1,14 +1,20 @@
 const express = require('express')
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 const articleRouter = require('./routes/articles')
 const Article = require('./models/article')
 const methodOverride = require('method-override')
+const { dbConnect } = require('./config/dbConnect')
+
+dotenv.config()
 
 const app = express()
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 3000;
+const PORT = 5000;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/blog', { 
-    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern/Mern_Blog', { 
+//     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+dbConnect();
 
 app.set('view engine', 'ejs')
 
