@@ -86,30 +86,30 @@
                         <% }) %>
             </div>
 
-        <div class="col-md-4" style="border-radius: 10px; background: #fff; margin-top: 110px; height: fit-content; box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.205)">
-            <h2 class="mt-4" style="font-family: 'Ubuntu', sans-serif;">Recent</h2>
-                <!-- <a href="/articles/new" class="btn btn-success">Add Article</a> -->
-            <h5 style="color: crimson; font-weight: bold;" class="mb-3">Get to know what is happening in the world of tech.</h5>
-                <% articles.forEach(article => { %>
-                    <div class="card mt-1" style="border-top: 2px solid #000; border-bottom: none; border-right: none; border-left: none; border-radius: 0;">
-                        <div class="card-body">
-                            <h6 class="card-title"><%= article.title %></h6>
-                            <div class="card-subtitle text-muted mb-2">
-                                posted: <%= article.createdDate.toLocaleDateString() %>
+            <div class="col-md-4" style="border-radius: 10px; background: #fff; margin-top: 110px; height: fit-content; box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.205)">
+                <h2 class="mt-4" style="font-family: 'Ubuntu', sans-serif;">Recent</h2>
+                    <!-- <a href="/articles/new" class="btn btn-success">Add Article</a> -->
+                <h5 style="color: crimson; font-weight: bold;" class="mb-3">Get to know what is happening in the world of tech.</h5>
+                    <% articles.forEach(article => { %>
+                        <div class="card mt-1" style="border-top: 2px solid #000; border-bottom: none; border-right: none; border-left: none; border-radius: 0;">
+                            <div class="card-body">
+                                <h6 class="card-title"><%= article.title %></h6>
+                                <div class="card-subtitle text-muted mb-2">
+                                    posted: <%= article.createdDate.toLocaleDateString() %>
+                                </div>
+                                <!-- <div class="text-card mb-2"><%= article.description %></div> -->
+                                <a href="articles/<%= article.slug %>" class="btn btn-sm btn-primary" style="background: #000; border: none;">read more</a>
+                                <!-- <a href="articles/edit/<%= article.id %> " class="btn btn-info">edit</a> -->
+                                <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-danger">delete</button>
+                                </form> -->
                             </div>
-                            <!-- <div class="text-card mb-2"><%= article.description %></div> -->
-                            <a href="articles/<%= article.slug %>" class="btn btn-sm btn-primary" style="background: #000; border: none;">read more</a>
-                            <!-- <a href="articles/edit/<%= article.id %> " class="btn btn-info">edit</a> -->
-                            <!-- <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                                <button type="submit" class="btn btn-danger">delete</button>
-                            </form> -->
                         </div>
-                    </div>
-                <% }) %>
-        </div>
-    </div> 
-       
-</div>
-    
+                    <% }) %>
+            </div>
+        </div> 
+        
+    </div>
+    <%- include('_footer.ejs') %>
 </body>
 </html>

@@ -12,6 +12,8 @@ const app = express()
 // const PORT = process.env.PORT || 3000;
 const PORT = 5000;
 
+
+
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern/Mern_Blog', { 
 //     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 dbConnect();

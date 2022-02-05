@@ -1,0 +1,106 @@
+<style>
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+    *{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    a{
+        text-decoration: none;
+        color: #000000;
+    }
+    ul{
+        padding: 20px 0px;
+    }
+    ul li{
+        list-style: none;
+        padding: 5px;
+    }
+    ul li:hover a{
+        color: crimson;
+        transition: all 0.3s;
+    }
+    img{
+        height: 100px;
+        object-fit: contain;
+        margin-top: 20%;
+    }
+    footer{
+        background-color: #a0a0a0;
+    }
+
+
+    form { max-width:auto; margin:10px auto; }
+
+    .feedback-input {
+        color: #000000;
+        font-weight:500;
+        border-radius: 5px;
+        line-height: 22px;
+        background-color: transparent;
+        border:2px solid #000000;
+        transition: all 0.3s;
+        padding: 13px;
+        margin-bottom: 5px;
+        width:100%;
+        box-sizing: border-box;
+        outline:0;
+    }
+
+    .feedback-input:focus { border:2px solid crimson; }
+
+    textarea {
+        height: 50px;
+        line-height: 150%;
+        resize:vertical;
+    }
+
+    .formComment {
+        width: 100%;
+        background:#000000;
+        border-radius:5px;
+        border:0;
+        cursor:pointer;
+        color:white;
+        padding-top:10px;
+        padding-bottom:10px;
+        transition: all 0.3s;
+        margin-top:-4px;
+        font-weight:700;
+    }
+    .formComment:hover {
+        background: crimson;;
+    }
+</style>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo">
+                <a href="/"><img src="/img/logo.png"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li><a href="https://youtube.com/channel/UCiIcnEGL85rkdhhYEgKbncQ"><i class="fa fa-youtube" aria-hidden="true"></i> youtube</a></li>
+                    <li><a href="https://stackoverflow.com/users/13798941/njuguna-nc"><i class="fa fa-stack-overflow" aria-hidden="true"></i> stackoverflow</a></li>
+                    <li><a href="https://instagram.com/cn5.0?igshid=pqognvyugbq9"><i class="fa fa-instagram" aria-hidden="true"></i> instagram</a></li>
+                    <li><a href="https://github.com/charlesncn"><i class="fa fa-github" aria-hidden="true"></i> github</a></li>
+                    <li><a href="https://www.linkedin.com/in/charles-n-45395b1aa"><i class="fa fa-linkedin" aria-hidden="true"> linkedin</i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <form>       
+                        <input name="email" type="text" class="feedback-input" placeholder="Email" />
+                        <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                        <input class="formComment" type="submit" value="SUBMIT"/>
+                    </form>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center;">Designed and Mainatained by charlesncn</p>
+        
+    </div>
+</footer>
