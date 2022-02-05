@@ -14,42 +14,34 @@
 
     
     <div class="container" style="height: 220px;
-    background:rgba(0, 0, 0, 0.849);
-    margin-top: -220px;">
+                                background:rgba(0, 0, 0, 0.849);
+                                margin-top: -220px;">
 
-        <span style="
-        margin: auto 0;
-        padding: 40px 0;
-        color: #fff;">
+        <span style="margin: auto 0;
+                    padding: 40px 0;
+                    color: #fff;">
             <h2 class="mb-4" style="text-align: center; font-family: 'Ubuntu', sans-serif;"><%= article.title %></h2>
-            
         
         <p>
             <h5 style="text-align: center;">Topic: <%= article.topic %></h5> <br>
             <div class="text-muted mb-2">created: <%= article.createdDate.toLocaleDateString() %> </div>
             <a href="/" class="href btn btn-secondary">all articles</a>
             <a href="/articles/edit/<%= article.id %> " class="href btn btn-info">edit</a>
-
         </p>
-
-
     </div>
 
 
                 
 
     <div class="container" style="margin-top: 40px;">
-                
-                         <img src="/img/uploads/<%= article.img %> " class="img-fluid" alt="">
-                <div class="row">
-                     <div class="col-md-12"><%- article.sanitizedHtml %> </div>
-                     <!-- <div class="col-md-4">
-                     </div> -->
-            
-                </div>
-               
-        
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12" style="font-size: 24px; line-height: 28px; font-weight: 200;"><%- article.sanitizedHtml %> </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/uploads/<%= article.img %> " class="img-fluid" alt="">
+            </div>
+        </div>
     </div>
     
 </body>
