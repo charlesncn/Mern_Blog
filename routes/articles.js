@@ -72,15 +72,15 @@ function saveArticleAndRedirect(path) {
             article.img_source = req.body.img_source
 
         }
-        else{
-            article.title = req.body.title
-            article.description = req.body.description
-            article.topic = req.body.topic
-            article.hashtag = req.body.hashtag
-            article.markdown = req.body.markdown
-            article.author = req.body.author
-            article.img_source = req.body.img_source
-        }
+        // else{
+        //     article.title = req.body.title
+        //     article.description = req.body.description
+        //     article.topic = req.body.topic
+        //     article.hashtag = req.body.hashtag
+        //     article.markdown = req.body.markdown
+        //     article.author = req.body.author
+        //     article.img_source = req.body.img_source
+        // }
         
         try{
             article = await article.save()
