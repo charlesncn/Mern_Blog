@@ -1,5 +1,5 @@
 const express = require('express')
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const articleRouter = require('./routes/articles')
 const Article = require('./models/article')
@@ -10,13 +10,17 @@ dotenv.config()
 
 const app = express()
 // const PORT = process.env.PORT || 3000;
+<<<<<<< HEAD
 const PORT = 4000;
+=======
+const PORT = 9000;
+>>>>>>> eab57a28ad9b83c4a981829c07607efeb34c7c65
 
 
 
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern/Mern_Blog', { 
-//     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-dbConnect();
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mern/Mern_Blog', { 
+    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+// dbConnect();
 
 app.set('view engine', 'ejs')
 
