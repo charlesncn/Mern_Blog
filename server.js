@@ -10,11 +10,9 @@ dotenv.config()
 
 const app = express()
 // const PORT = process.env.PORT || 3000;
-<<<<<<< HEAD
+
 const PORT = 4000;
-=======
-const PORT = 9000;
->>>>>>> eab57a28ad9b83c4a981829c07607efeb34c7c65
+
 
 
 
